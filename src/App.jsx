@@ -40,14 +40,24 @@ function App() {
         onChange={(inputString) => searchItems(inputString.target.value)}
       />
       <ul>
-        {list?.Data && Object.entries(list.Data).map(([coin]) =>
-          list.Data[coin].PlatformType === "blockchain" ? (
-              <CoinInfo 
+        {searchInput.length > 0
+          ? filteredResults.map((coin) => 
+              list.Data[coin].PlatformType === "blockchain" ? 
+              <CoinInfo
                 image={list.Data[coin].ImageUrl}
                 name={list.Data[coin].FullName}
                 symbol={list.Data[coin].Symbol}
               />
-            ) : null
+              : null
+            )
+          : list && Object.entries(list.Data).map(([coin]) => 
+              list.Data[coin].PlatformType === "blockchain" ? 
+              <CoinInfo
+                image={list.Data[coin].ImageUrl}
+                name={list.Data[coin].FullName}
+                symbol={list.Data[coin].Symbol}
+              />
+          : null
         )}
       </ul>
     </div>
