@@ -1,63 +1,118 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #121212;
+  color: #f5f5f5;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.5;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+/* Page container */
+.whole-page {
+  padding: 2rem;
   text-align: center;
+  background: #121212;
+  color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Header */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: white;
+  text-transform: capitalize;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Search input */
+input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  border: 2px solid #333;
+  background: #1e1e1e;
+  color: #f5f5f5;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+input[type="text"]:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.3);
 }
 
-body {
-  background: black;
+input[type="text"]::placeholder {
+  color: #888;
 }
 
-.icons {
-  padding-right: 10px;
-  width: 30px;
-  height: 30px;
-}
-
+/* Coin list */
 ul {
   list-style: none;
-  margin: 25px 50px 75px 30px;
+  margin: 0;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 li.main-list {
-  padding: 25px;
-  border-bottom: solid 3px white;
-  font-size: larger;
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.1rem;
+  text-align: left;
+  transition: background-color 0.2s ease;
 }
 
-.whole-page {
-  padding: 50px;
-  text-align: center;
-  background: black;
-  color: white;
+li.main-list:hover {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
+/* Coin icons */
+.icons {
+  width: 36px;
+  height: 36px;
+  margin-right: 1rem;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 4px;
+}
+
+/* Price spacing */
+.tab {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .whole-page {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  li.main-list {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
